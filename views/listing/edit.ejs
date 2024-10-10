@@ -1,0 +1,80 @@
+<%- layout("layout/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2 mt-3">
+        <h3>Edit The listening</h3>
+    <form method="post" action="/listings/<%=listing._id%>/?_method=put" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" value="<%= listing.title %>" name="title" id="title" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="description" id="description" class="form-control" required><%= listing.description %></textarea>
+        </div>
+
+
+        <div class="mb-3">
+            <span>Current Image:</span><br>
+            <img src="<%=originalImageUrl%>" alt="Listing image" style="height: 40vh; width: 30vw;">
+        </div>
+
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label">Price</label>
+                <div class="input-group">
+                    <div class="input-group-text">&#8377</div>
+                    <input type="number" value="<%= listing.price %>" name="price" id="price" class="form-control" required>
+                </div> 
+            </div>
+            
+            <div class="mb-3 col-md-8">
+                <label for="category" class="form-label">Category</label>
+                <select name="category" class="form-select" id="Category" size="1" required>
+                    <option style="display:none;" selected ><%= listing.category %></option>
+                    <option value="trending">Trending</option>
+                    <option value="room">Room</option>
+                    <option value="iconic-citie">Iconic Citie</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="castle">Castle</option>
+                    <option value="pool">Swimming Pool</option>
+                    <option value="camping">Camping</option>
+                    <option value="arctic">Arctic</option>
+                    <option value="farms">Farm</option>
+                    <option value="dome">Dome</option>
+                    <option value="boat">Boat</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" value="<%= listing.country %>" name="country" id="country" class="form-control" required>
+            </div>
+
+
+            <div class="mb-3 col-md-8">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" value="<%= listing.location %>" name="location" id="location" class="form-control" required>
+            </div>
+        </div>
+
+       
+
+        <div class="mb-4">
+            <label for="image" class="form-label">Upload image Link</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>
+        
+        <button class="btn btn-dark edit-btn mt-1 mb-5">Make Changes</button>
+        
+    </form>
+    </div>
+</div>
+
+
+
+
+

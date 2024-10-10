@@ -1,0 +1,133 @@
+<%- layout("layout/boilerplate") %>
+
+<style>
+  /* Resetting offcanvas body margins and paddings */
+  .offcanvas-body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Offcanvas Header Styling */
+  .offcanvas-header {
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: #f7f7f7;
+  }
+
+  .offcanvas-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .offcanvas-img img {
+    border-radius: 50%;
+  }
+
+  .offcanvas-img b {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  /* Offcanvas Toggle Button - Smaller Designer Style */
+  .toggle-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: white;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .toggle-btn:hover {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+  }
+
+  /* Offcanvas Styling */
+  .offcanvas {
+    transition: width 0.3s ease-in-out;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+  }
+
+  /* Offcanvas buttons styling */
+  .offcanvas-btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.2s;
+  }
+
+  .offcanvas-btn:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Button Icons */
+  .offcanvas-btn i {
+    color: #007bff;
+  }
+
+  /* Close button styling */
+  .btn-close {
+    outline: none;
+    border: none;
+  }
+</style>
+<div class="coming-soon-container" style="display: flex; justify-content: center;">
+  <h1>Coming Soon</h1>
+</div>
+
+<!-- Offcanvas Toggle Button -->
+<button class="toggle-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6.854 14.854a.5.5 0 0 1-.708-.708L10.293 10 6.146 5.854a.5.5 0 1 1 .708-.708l4.147 4.147a.5.5 0 0 1 0 .708l-4.147 4.147a.5.5 0 0 1-.708 0z"/>
+  </svg>
+</button>
+
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" style="width: 16rem;">
+  <div class="offcanvas-header">
+    <div class="offcanvas-img mt-2" type="button">
+      <% if (currentUser && currentUser.photo) { %>
+        <img src="<%= currentUser.photo %>" alt="Profile Photo" width="80" height="80">
+        <b><%= currentUser.username %></b>
+      <% } else { %>
+        <img src="https://res.cloudinary.com/dammyadjr/image/upload/v1726513405/StayOrbit_DEV/ibghmw0j2qcyxo8olydb.png" alt="Profile Photo" width="80" height="80">
+        <b><%= currentUser.username %></b>
+      <% } %>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <a href="/profile" class="text-decoration-none text-dark">
+      <button class="offcanvas-btn w-100 text-start mt-3">
+        <i class="fa-solid fa-user ms-2"></i> &nbsp; Profile
+      </button>
+    </a>
+
+    <a href="/logout" class="text-decoration-none text-dark">
+      <button class="offcanvas-btn w-100 text-start mt-2">
+        <i class="fa-solid fa-right-from-bracket ms-2"></i> &nbsp;Logout
+      </button>
+    </a>
+  </div>
+</div>

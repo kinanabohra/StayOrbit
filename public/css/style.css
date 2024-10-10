@@ -1,0 +1,192 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display:flex;
+  flex-direction: column;
+  min-height:100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.navbar-nav{
+    background-color: rgba(255, 255, 255,0.9);
+}
+
+.nav-anchor{
+    text-decoration: none;
+    color: #222222;  
+}
+
+.f-info a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-brand {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.f-info-brand:hover {
+    animation: pop-animation 2s ease-in-out forwards;
+    color: red;
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><text y="24" font-size="10">❤️</text></svg>') 16 16, auto;
+}
+
+@keyframes pop-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.f-info a:hover{
+    text-decoration: underline;
+}
+.f-info{
+    height: 8rem;
+    text-align: center; 
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.f-info-socials,.f-info-links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.f-info-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i{
+    font-size:1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info-links a{
+    margin-right: 0.5rem;
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover;
+}
+
+.card-body{
+    padding:0 !important;
+}
+.card-text{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+.card-img-overlay{
+    opacity:0;
+
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    background-color: white;
+}
+.add-btn, .edit-btn{
+    background-color: #fe424d !important;
+    border: none;
+}
+
+.show-image{
+    height: 50vh;
+    object-fit:fill;
+
+}
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#select_category{
+    #category {
+        max-height: 120px; /* Adjust this to show 3-4 options */
+        overflow-y: auto;  /* Enables vertical scrolling */
+    }
+}
+
+#filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#filters a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.filter{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    opacity: 0.7;
+    border-bottom:2px solid white ;
+
+}
+
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+    border-bottom:2px solid #222222 ;
+}
+  
+.filter p{
+    font-size: 0.8rem;
+}
+
+#map {
+height:26rem;
+width: 55vw;
+  }
+
+.offcanvas-btn{
+    background-color: white !important;
+    border: none !important;
+}
+
+.offcanvas-btn:hover{
+    background-color: #ebebeb !important;
+}
+

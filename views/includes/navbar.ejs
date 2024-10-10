@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings" style="margin: 0; padding: 0;">
+        <img src="/image/logo.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-top" style="margin: 0; padding: 0;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <span><a class="nav-link" href="/listings" ><b style="color: #1697D4; font-size:x-large;">StayOrbit</b></a></span>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <span><a class="nav-link me-1" href="/listings/new">Airbnb your home</a></span>
+          <% if (!currentUser) { %>
+            <span><a class="nav-link" href="/signup"><b>Sign Up</b></a></span>
+            <span><a class="nav-link" href="/login"><b>Login</b></a></span>
+          <% } %>
+          <% if (currentUser) { %>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" style="border-color: white; padding-left: 0; " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <% if (currentUser && currentUser.photo) { %>
+                  <img src="<%= currentUser.photo %>" alt="Profile Photo" width="30" height="30" style="border-radius: 50%;">
+                <% }else { %>
+                  <img src="https://res.cloudinary.com/dammyadjr/image/upload/v1726513405/StayOrbit_DEV/ibghmw0j2qcyxo8olydb.png" alt="Profile Photo" width="30" height="30" style="border-radius: 50%;">
+                <% } %>
+                &nbsp; &nbsp;<%= currentUser.username %>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <a href="/profile" class="nav-anchor">
+                <li class="dropdown-item">
+                  <i class="fa-solid fa-user"></i>
+                  &nbsp;&nbsp;Profile
+                </li>
+                </a>
+                <a href="/logout" class="nav-anchor">
+                <li class="dropdown-item">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  &nbsp;&nbsp;Logout
+                </li>
+                </a>
+              </ul>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+</nav>
+
+
+
+<!-- <span class="nav-span"><a class="nav-link" href="/logout"><b>Logout</b></a></span> -->
+
