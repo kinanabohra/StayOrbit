@@ -139,12 +139,6 @@ body{
     padding-right: 0;
 }
 
-#select_category{
-    #category {
-        max-height: 120px; /* Adjust this to show 3-4 options */
-        overflow-y: auto;  /* Enables vertical scrolling */
-    }
-}
 
 #filters{
     display: flex;

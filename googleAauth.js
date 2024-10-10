@@ -5,7 +5,7 @@ const User = require('./models/user'); // Assuming you have a User model
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8080/auth/google/callback"
+    callbackURL: "https://stayorbit.onrender.com/auth/google/callback"
   },
   async function(accessToken, refreshToken, profile, done) {
     try {
